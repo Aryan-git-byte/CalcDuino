@@ -1,5 +1,5 @@
 [wokwi]
 version = 1
 
-firmware = "build/CalcDuino.ino.hex"
-elf = "build/CalcDuino.ino.elf"
+firmware = "build/calcduino.ino.hex"
+elf = "build/calcduino.ino.elf"
