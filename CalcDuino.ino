@@ -140,16 +140,17 @@ void loop()
         }
       break;
       }
+     reset_lcd();
+     lcd.print(currentnumber);
+
+
+     firstnumber = 0;
+     lastnumber = 0; 
+     currentnumber = 0;
+     operation = '\0';
     }
     
-    reset_lcd();
-    lcd.print(currentnumber);
 
-
-    firstnumber = 0;
-    lastnumber = 0;
-    currentnumber = 0;
-    operation = '\0';
     
   
 
@@ -167,7 +168,7 @@ void reset_lcd(){
 
 char decodeRemote(uint8_t ir_input){
   switch (ir_input) {
-  case 16:
+  case 48:
   return '1';
   case 17:
   return '2';
