@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Aryan Kumar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -12.6, "left": 281.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 198.4,
+      "left": 620,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": 211.2, "left": 451.2, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 37.05, "left": 487.82, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -299.6,
+      "left": 312.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -84,
+      "left": 88.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "keypad1:R1", "bb1:12t.a", "", [ "$bb" ] ],
+    [ "keypad1:R2", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "keypad1:R3", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "keypad1:R4", "bb1:15t.a", "", [ "$bb" ] ],
+    [ "keypad1:C1", "bb1:16t.a", "", [ "$bb" ] ],
+    [ "keypad1:C2", "bb1:17t.a", "", [ "$bb" ] ],
+    [ "keypad1:C3", "bb1:18t.a", "", [ "$bb" ] ],
+    [ "keypad1:C4", "bb1:19t.a", "", [ "$bb" ] ],
+    [ "bb1:12t.b", "uno:2", "green", [ "v-9.6", "h-172.8" ] ],
+    [ "keypad1:R2", "uno:3", "orange", [ "v9.6", "h-192.4" ] ],
+    [ "keypad1:R3", "uno:4", "gold", [ "v19.2", "h-211.5" ] ],
+    [ "keypad1:R4", "uno:5", "blue", [ "v28.8", "h-240.2" ] ],
+    [ "keypad1:C1", "uno:6", "violet", [ "v38.4", "h-249.7" ] ],
+    [ "uno:7", "bb1:17t.b", "gray", [ "v76.8", "h272.4" ] ],
+    [ "uno:8", "bb1:18t.b", "white", [ "v86.4", "h298" ] ],
+    [ "uno:9", "bb1:19t.b", "purple", [ "v86.4", "h317.6" ] ],
+    [ "ir1:GND", "bb1:22b.h", "", [ "$bb" ] ],
+    [ "ir1:VCC", "bb1:23b.h", "", [ "$bb" ] ],
+    [ "ir1:DAT", "bb1:24b.h", "", [ "$bb" ] ],
+    [ "bb1:22b.i", "bb1:bn.18", "black", [ "v0" ] ],
+    [ "bb1:23b.j", "bb1:bp.19", "red", [ "v0" ] ],
+    [ "bb1:24b.i", "uno:11", "green", [ "v0", "h-364.8" ] ],
+    [ "uno:5V", "bb1:bp.1", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "lcd1:GND", "bb1:bn.25", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:bp.24", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "uno:A5", "lcd1:SCL", "green", [ "v0" ] ],
+    [ "bz1:2", "uno:13", "green", [ "v0" ] ],
+    [ "uno:GND.1", "bz1:1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
